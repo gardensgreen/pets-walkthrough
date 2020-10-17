@@ -1,0 +1,25 @@
+{
+  "name": "pets-walkthrough",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gardensgreen/pets-walkthrough.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gardensgreen/pets-walkthrough/issues"
+  },
+  "homepage": "https://github.com/gardensgreen/pets-walkthrough#readme",
+  "dependencies": {
+    "pg": "^8.4.1",
+    "sequelize": "^5.22.3",
+    "sequelize-cli": "^5.5.1"
+  }
+}
