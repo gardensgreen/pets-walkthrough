@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         {}
     );
     PetType.associate = function (models) {
-        // associations can be defined here
+        PetType.hasMany(models.Pet, {foreignKey: 'petTypeId'})
     };
     return PetType;
 };

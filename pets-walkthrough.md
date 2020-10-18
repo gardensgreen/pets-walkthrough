@@ -159,22 +159,22 @@ validate: {
 notEmpty: true
 }
 },
-petTypeId: DataTypes.INTEGER,
-age: DataTypes.INTEGER
+<!-- petTypeId: DataTypes.INTEGER,
+age: DataTypes.INTEGER -->
 }
-Make the relationship between Pet and PetType.
-Because Pet has a foreign key of PetType, it belongs to PetType. That means PetType has many Pets.
+<!-- Make the relationship between Pet and PetType.
+Because Pet has a foreign key of PetType, it belongs to PetType. That means PetType has many Pets. -->
 
-In the static method associate on Pet model, define a belongsTo association with PetType using the petTypeId.
+<!-- In the static method associate on Pet model, define a belongsTo association with PetType using the petTypeId. -->
 
-In the static method associate on PetType model, define a hasMany association with Pet using the petTypeId.
+<!-- In the static method associate on PetType model, define a hasMany association with Pet using the petTypeId.
 
 Pet model's associate static method should have this in it:
 
 Pet.belongsTo(models.PetType, { foreignKey: 'petTypeId' });
 PetType model's associate static method should have this in it:
 
-PetType.hasMany(models.Pet, { foreignKey: 'petTypeId' });
+PetType.hasMany(models.Pet, { foreignKey: 'petTypeId' }); -->
 Do the following for PetOwner
 Generate the migration and model files
 attributes: petId and ownerId
@@ -188,7 +188,7 @@ npx sequelize-cli model:generate \
 Database level validations:
 
 {
-petId: {
+<!-- petId: {
 allowNull: false,
 type: Sequelize.INTEGER,
 references: { model: "Pets" }
@@ -198,7 +198,7 @@ allowNull: false,
 type: Sequelize.INTEGER,
 references: { model: "Owners" }
 },
-}
+} -->
 Make the appropriate belongsTo and hasMany relationships between Pet and PetOwner and between PetOwner and PetOwner.
 PetOwner model's associate static method should have this in it:
 
@@ -214,7 +214,7 @@ Owner model's associate static method should have this in it:
 Owner.hasMany(models.PetOwner, { foreignKey: 'ownerId' });
 Create a belongsToMany association between Pet and Owner through PetOwner.
 Pet model's associate static method should have this in it:
-
+<!--
 Pet.belongsToMany(models.Owner, {
 through: models.PetOwner,
 foreignKey: 'petId',
@@ -226,7 +226,7 @@ Owner.belongsToMany(models.Pet, {
 through: models.PetOwner,
 foreignKey: 'ownerId',
 otherKey: 'petId'
-});
+}); -->
 Generate a seeder file that will seed the PetTypes.
 npx sequelize-cli seed:generate --name add-pet-types
 Create PetTypes with the following types in the add-pet-types seeder generated:
